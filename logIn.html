@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In page</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body style="background-color: #fff;">
+    <div class="app">
+      <div class="container">
+        <div class="button-container">
+          <a href="logIn.html"
+            ><button id="login-btn" class="active">Log In</button></a
+          >
+          <a href="signUp.html"><button id="register-btn">Sign Up</button></a>
+        </div>
+        <div class="form-container">
+          <form id="login-form">
+            <h2 class="form-label">Log In</h2>
+            <div class="form-group">
+              <label for="username">Email:</label>
+              <input type="email" id="username" name="username" required />
+              <p class="error-message email-validation"></p>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required />
+              <p class="error-message password-validation"></p>
+            </div>
+            <div class="show-password">
+              <label for="show-password">Show password</label>
+              <input
+                type="checkbox"
+                name="show-password"
+                id="show-password"
+              />
+            </div>
+            <button type="submit">
+              Log In
+              <div id="spinner" style="display: none">
+                <img src="./images/spinner.gif" alt="Loading..." />
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="toast-container"></div>
+    </div>
+    <script src="./js/logIn.js"></script>
+  </body>
+</html>

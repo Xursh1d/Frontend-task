@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>User Profile</h1>
+        <form id="register-form" action="#">
+          <div>
+            <label for="picture" class="upload-picture">
+              <img
+                id="profile-picture"
+                src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                alt="Profile Picture"
+            /></label>
+            <input
+              type="file"
+              id="picture"
+              name="picture"
+              style="display: none"
+            />
+          </div>
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required />
+            <p class="error-message full-name-validation"></p>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <p class="error-message email-validation"></p>
+          </div>
+
+          <button type="submit">
+            Save profile
+            <div id="register-spinner" style="display: none">
+              <img src="./images/spinner.gif" alt="Loading..." />
+            </div>
+          </button>
+          <button type="button" class="goback-btn">Go back</button>
+        </form>
+
+        <div id="profile-info"></div>
+      </div>
+    </div>
+    <script src="./js/userProfile.js"></script>
+  </body>
+</html>

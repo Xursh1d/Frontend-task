@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Leaderboard</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <style>
+      .leader-container {
+        width: 80%;
+        margin-top: 80px !important;
+        margin: 0 auto;
+        z-index: -1 !important;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+      .leaderboard-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 20px 0;
+      }
+      tr:nth-of-type(odd) {
+        background: #eee;
+      }
+
+      th {
+        background: #308833;
+        color: white;
+        font-weight: 500;
+      }
+
+      td,
+      th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 15px;
+      }
+      @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+        .leader-container {
+          width: 90%;
+        }
+        table {
+          width: 100%;
+        }
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+
+        tr {
+          border: 1px solid #ccc;
+        }
+
+        td {
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50%;
+        }
+
+        td:before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          content: attr(data-column);
+
+          color: #000;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="navbar-container">
+        <div class="profile-bar">
+          <div class="profile">
+            <img
+              id="profile-picture"
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt="Profile Picture"
+            />
+            <a href="userProfile.html" id="user_profile"></a>
+          </div>
+          <div class="profile-actions">
+            <img src="./images/burger.jpg" alt="Menu" class="burger-icon" />
+            <ul class="menu-bar">
+              <li><a href="index.html">Quizzes</a></li>
+              <li class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-btn active-menu">Leaderboard</p>
+                  <img src="./images/dropdown.webp" alt="dropdown" />
+                </div>
+                <div class="dropdown-content"></div>
+              </li>
+              <li><a href="#">Quiz history</a></li>
+              <li class="log-out">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="leader-container">
+        <h1 class="leaderboard-title"></h1>
+        <table class="leader-table">
+          <thead>
+            <tr class="table-row">
+              <th>№</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="loader-conatiner" style="display: none">
+      <img src="./images/basic spinner.gif" alt="Loading..." class="loader" />
+    </div>
+    <script src="./js/loaderboard.js"></script>
+    <script src="./js/navbar.js"></script>
+  </body>
+</html>

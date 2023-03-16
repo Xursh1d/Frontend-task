@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz App Home</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="navbar-container">
+        <div class="profile-bar">
+          <div class="profile">
+            <img
+              id="profile-picture"
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt="Profile Picture"
+            />
+            <a href="userProfile.html" id="user_profile"></a>
+          </div>
+          <div class="profile-actions">
+            <img src="./images/burger.jpg" alt="Menu" class="burger-icon" />
+            <ul class="menu-bar">
+              <li><a href="index.html" class="active-menu">Quizzes</a></li>
+              <li class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-btn">Leaderboard</p>
+                  <img src="./images/dropdown.webp" alt="dropdown" />
+                </div>
+                <div class="dropdown-content"></div>
+              </li>
+              <li><a href="#">Quiz history</a></li>
+              <li class="log-out">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-container">
+        <h1 class="quiz-header-title">Welcome to Quiz App!</h1>
+
+        <div id="quiz-list"></div>
+      </div>
+    </div>
+    <div class="loader-conatiner" style="display: none">
+      <img src="./images/basic spinner.gif" alt="Loading..." class="loader" />
+    </div>
+    <script src="./js/quizzes.js"></script>
+    <script src="./js/navbar.js"></script>
+  </body>
+</html>
